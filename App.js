@@ -4,6 +4,7 @@ import SearchScreen from "./src/screens/SearchScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./src/screens/HomeScreen";
+import ResultsShowScreen from "./src/screens/ResultsShowScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -11,8 +12,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Search">
-        <Stack.Screen name="Search" component={SearchScreen} />
+        <Stack.Screen name="Search" component={SearchScreen} title="Results" />
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="ResultsShow" component={ResultsShowScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
