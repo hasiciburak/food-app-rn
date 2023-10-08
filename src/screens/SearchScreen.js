@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { View, Text, ScrollView, StyleSheet, StatusBar } from "react-native";
 import React, { useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar";
 import useResults from "../hooks/useResults";
@@ -14,6 +14,7 @@ const SearchScreen = ({ navigation }) => {
 
   return (
     <>
+      <StatusBar barStyle="light-content" backgroundColor="#f95419" />
       <SearchBar
         term={term}
         onTermChange={(newTerm) => setTerm(newTerm)}
@@ -34,6 +35,11 @@ const SearchScreen = ({ navigation }) => {
         <ResultList
           results={filterResultsByPrice("$$$")}
           title="Big Spender"
+          navigation={navigation}
+        />
+        <ResultList
+          results={filterResultsByPrice("$$$$")}
+          title="Ultimate Luxury"
           navigation={navigation}
         />
       </ScrollView>
